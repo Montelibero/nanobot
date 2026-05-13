@@ -5,11 +5,17 @@
 
 | Branch | Type | Purpose | Upstream PR |
 |---|---|---|---|
-| `feat/model-fallback-chain` | feat | Model fallback chain support | n/a |
-| `fix/telegram-routing-dream` | fix | Telegram session/topic routing and Dream status/test fixes | n/a |
 | `feat/telegram-polling-healthcheck` | feat | Telegram polling healthcheck scripts and container wiring | n/a |
+| `feat/telegram-allowed-chat-members` | feat | Telegram per-chat access rules via `chatAccess` | n/a |
 | `local/ci-deploy` | local | Fork-specific deploy Docker workflow | n/a |
 | `local/meta` | local | Fork workflow docs and branch registry | n/a |
+
+## Superseded branches
+
+| Branch | Status |
+|---|---|
+| `feat/model-fallback-chain` | Superseded by upstream model fallback support in `main`. |
+| `fix/telegram-routing-dream` | Superseded by upstream Telegram topic/session and Dream command updates in `main`. |
 
 ## Recipe
 
@@ -19,13 +25,11 @@
 git checkout deploy
 git reset --hard main
 for b in \
-  feat/model-fallback-chain \
-  fix/telegram-routing-dream \
   feat/telegram-polling-healthcheck \
+  feat/telegram-allowed-chat-members \
   local/ci-deploy \
   local/meta
 do
   git merge --no-ff "$b" -m "deploy: include $b"
 done
 ```
-
