@@ -25,13 +25,13 @@ from telegram.ext import Application, CallbackQueryHandler, ContextTypes, Messag
 from telegram.request import HTTPXRequest
 
 from nanobot.bus.events import InboundMessage, OutboundMessage
-from nanobot.telegram_polling_health import TelegramHealthState, TelegramPollingHealthRequest
 from nanobot.bus.queue import MessageBus
 from nanobot.channels.base import BaseChannel
 from nanobot.command.builtin import build_help_text
 from nanobot.config.paths import get_media_dir
 from nanobot.config.schema import Base
 from nanobot.security.network import validate_url_target
+from nanobot.telegram_polling_health import TelegramHealthState, TelegramPollingHealthRequest
 from nanobot.utils.helpers import split_message
 
 TELEGRAM_MAX_MESSAGE_LEN = 4000  # Telegram message character limit
